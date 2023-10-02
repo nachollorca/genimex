@@ -143,11 +143,13 @@ st.divider()
 c1, c2 = st.columns(2)
 if c1.button("Write summary section", use_container_width=True):
     prompt.gen_summary()
-    st.write(prompt.launch_prompt("summary"))
+    with st.spinner(":brain: Thinking... Please do not tap the button again"):
+        st.write(prompt.launch_prompt("summary"))
 
 if c2.button("Write location section", use_container_width=True):
     prompt.gen_location()
-    st.write(prompt.launch_prompt("location"))
+    with st.spinner(":brain: Thinking... Please do not tap the button again"):
+        st.write(prompt.launch_prompt("location"))
 
 
 
